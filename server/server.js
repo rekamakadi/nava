@@ -12,19 +12,19 @@ app.get('/', (req, res) => {
 });
 
 app.get('/:id', (req, res) => {
-    res.send(`Get image with id ${req.params.id}`);
+    res.send(`Here should be image with id ${req.params.id}`);
 });
 
 app.post('/', (req, res) => {
-    res.send('Image created');
+    res.send('Image should be created');
 });
 
 app.patch('/:id', (req, res) => {
-    res.send(`Image with id ${req.params.id} updated`);
+    res.send(`Image with id ${req.params.id} should be updated`);
 });
 
 app.delete('/:id', (req, res) => {
-    res.send(`Image with id ${req.params.id} deleted`);
+    res.send(`Image with id ${req.params.id} should be deleted`);
 });
 
 app.listen(5000, () => console.log('Server started'));

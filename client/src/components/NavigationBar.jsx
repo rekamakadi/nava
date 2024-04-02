@@ -8,7 +8,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function NavigationBar() {
   return (
-    <Navbar expand="lg" bg="light" variant="light">
+    <Navbar expand="lg" bg="dark" variant="dark">
       <Container fluid>
         <Navbar.Brand href="#">Logo</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarNav" />

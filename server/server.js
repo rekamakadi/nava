@@ -8,11 +8,14 @@ app.use(cors({ origin: 'http://localhost:5173' }));
 
 app.get('/', (req, res) => {
     const readfile = fs.readFileSync('./foto.json', 'utf8');
-    res.json(readfile);
+    const data = JSON.parse(readfile).response.docs;
+    res.json(data);
 });
 
 app.get('/:id', (req, res) => {
-    res.send(`Here should be image with id ${req.params.id}`);
+    const images = JSON.parse(fs.readFileSync('./foto.json', 'utf8')).response.docs;
+    const image = images.find(i => req.params.id == i.id);
+    return res.json(image);
 });
 
 app.post('/', (req, res) => {

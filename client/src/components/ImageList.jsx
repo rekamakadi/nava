@@ -9,17 +9,18 @@ const ImageList = ({ images }) => {
         <Accordion.Header>
           <img
             src={`https://picsum.photos/id/${index}/200/300`}
-            alt={`Kép ${index}`}
+            alt={`Kép ${image.filename_str}`}
             style={{ marginRight: '10px', width: '50px', height: 'auto' }}
           />
-          {`Kép ${index + 1} - Leírás: ${image.description_str}`}
+          {`${image.filename_str} - ${image.description_str}`}
         </Accordion.Header>
         <Accordion.Body>
-          <p>{`ID: ${image.id}`}</p>
+          <p>{`Azonosító: ${image.id}`}</p>
           <p>{`Méret: ${image.ow_i}x${image.oh_i}`}</p>
           <p>{`Készítés dátuma: ${image.createDate_dt}`}</p>
           <p>{`Módosítás dátuma: ${image.harvestDate_dt}`}</p>
           <p>{`Formátum: ${image.format_str}`}</p>
+          <Button href={`/${image.id}`}>Metaadatok</Button>
         </Accordion.Body>
       </Accordion.Item>
       ))}

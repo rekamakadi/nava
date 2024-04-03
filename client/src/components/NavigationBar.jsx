@@ -25,7 +25,7 @@ function NavigationBar() {
               className="me-lg-2 mb-2 mb-lg-0"
               aria-label="Search"
             />
-            <NavDropdown title="Mindenben" id="navbarScrollingDropdown" className="me-lg-2">
+            <NavDropdown title="Mindenben" id="navbarScrollingDropdown" className="me-lg-2 text-white">
               <NavDropdown.Item href="#prefix">prefix szerint</NavDropdown.Item>
               <NavDropdown.Item href="#tipus">típus szerint</NavDropdown.Item>
               <NavDropdown.Item href="#formatum">formátum szerint</NavDropdown.Item>

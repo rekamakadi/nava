@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 
 const ImageData = () => {
   const { id } = useParams();
@@ -27,32 +27,42 @@ const ImageData = () => {
   }
   
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col">
+    <Container>
+      <Row className="mt-4">
+        <Col xs={12}>
           <h3>Metaadatok</h3>
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={12} md={6}>
           <img
             src={`https://picsum.photos/600/400`}
             alt={`Kép ${image.filename_str}`}
-            className="img-fluid"
+            className="img-fluid mb-4"
           />
-          <p>{`Azonosító: ${image.id}`}</p>
-          <p>{`Fájlnév: ${image.filename_str}`}</p>
-          <p>{`Gyűjtemény: ${image.coll_str}`}</p>
-          <p>{`Riport: ${image.status_i}`}</p>
-          <p>{`Technikai infó: ${image.technical_info}`}</p>
-          <p>{`Eredeti képszám: ${image.serialinfo_str}`}</p>
-          <p>{`Master Format: ${image.format_str}`}</p>
-          <p>{`MetadataSet: ${image.mid_str}`}</p>
-          <p>{`Kiadás dátuma: ${image.createDate_dt}`}</p>
-          <p>{`Utolsó módosítás: ${image.harvestDate_dt}`}</p>
+        </Col>
+        <Col xs={12} md={6}>
+          <p><strong>Azonosító:</strong> {image.id}</p>
+          <p><strong>Fájlnév:</strong> {image.filename_str}</p>
+          <p><strong>Gyűjtemény:</strong> {image.coll_str}</p>
+          <p><strong>Riport:</strong> {image.status_i}</p>
+          <p><strong>Technikai infó:</strong> {image.pictureType_str}</p>
+          <p><strong>Eredeti képszám:</strong> {image.serialinfo_str}</p>
+          <p><strong>Master Format:</strong> {image.format_str}</p>
+          <p><strong>MetadataSet:</strong> {image.mid_str}</p>
+          <p><strong>Kiadás dátuma:</strong> {image.createDate_dt}</p>
+          <p><strong>Utolsó módosítás:</strong> {image.harvestDate_dt}</p>
+        </Col>
+      </Row>
+      <Row className="mt-4">
+        <Col>
           <Button href="/" className="btn btn-secondary me-2">Vissza</Button>
           <Button href={`/update/${image.id}`} className="btn btn-primary">
             Szerkesztés
           </Button>
-        </div>
-      </div>
-    </div>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

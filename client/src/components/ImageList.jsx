@@ -27,8 +27,8 @@ const ImageList = ({ images }) => {
                   <div className="mb-3">
                       <p className="mb-0"><strong>Azonosító:</strong> {image.id}</p>
                       <p className="mb-0"><strong>Méret:</strong> {`${image.ow_i}x${image.oh_i}`}</p>
-                      <p className="mb-0"><strong>Készítés dátuma:</strong> {image.createDate_dt}</p>
-                      <p className="mb-0"><strong>Módosítás dátuma:</strong> {image.harvestDate_dt}</p>
+                      <p className="mb-0"><strong>Készítés dátuma:</strong> {image.createDate_dt.split('T')[0]}</p>
+                      <p className="mb-0"><strong>Módosítás dátuma:</strong> {image.harvestDate_dt.split('T')[0]}</p>
                       <p className="mb-0"><strong>Formátum:</strong> {image.format_str}</p>
                   </div>
                   <Button href={`/${image.id}`} variant="primary">Metaadatok</Button>
@@ -68,8 +68,8 @@ const ImageList = ({ images }) => {
                   <td>{image.description_str}</td>
                   <td>{image.id}</td>
                   <td>{`${image.ow_i}x${image.oh_i}`}</td>
-                  <td>{image.createDate_dt}</td>
-                  <td>{image.harvestDate_dt}</td>
+                  <td>{image.createDate_dt.split('T')[0]}</td>
+                  <td>{image.harvestDate_dt.split('T')[0]}</td>
                   <td>{image.format_str}</td>
                   <td><Button href={`/${image.id}`} variant="primary">Metaadatok</Button></td>
               </tr>

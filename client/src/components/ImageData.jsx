@@ -50,8 +50,8 @@ const ImageData = () => {
           <p><strong>Eredeti képszám:</strong> {image.serialinfo_str}</p>
           <p><strong>Master Format:</strong> {image.format_str}</p>
           <p><strong>MetadataSet:</strong> {image.mid_str}</p>
-          <p><strong>Kiadás dátuma:</strong> {image.createDate_dt}</p>
-          <p><strong>Utolsó módosítás:</strong> {image.harvestDate_dt}</p>
+          <p><strong>Kiadás dátuma:</strong> {image.createDate_dt.split('T')[0]}</p>
+          <p><strong>Utolsó módosítás:</strong> {image.harvestDate_dt.split('T')[0]}</p>
         </Col>
       </Row>
       <Row className="mt-4">

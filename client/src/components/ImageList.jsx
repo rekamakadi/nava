@@ -60,7 +60,8 @@ const ImageList = ({ images }) => {
                           <img
                               src={`https://picsum.photos/id/${index}/80`}
                               alt={`Kép ${image.filename_str}`}
-                              className="img-thumbnail"
+                              className="me-3 img-thumbnail"
+                              style={{ minWidth: '80px', minHeight: '80px' }}
                           />
                       </div>
                   </td>

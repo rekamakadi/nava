@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import './App.css';
 import NavigationBar from './components/NavigationBar';
 import ImageList from './components/ImageList';
 import ImageData from './components/ImageData';

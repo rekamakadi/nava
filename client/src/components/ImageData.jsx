@@ -7,7 +7,7 @@ const ImageData = () => {
   const [image, setImage] = useState(null);
 
   function fetchImageById() {
-    fetch(`http://localhost:5000/${id}`)
+    fetch(`http://localhost:3000/${id}`)
       .then(response => {
         if (!response.ok) {
           throw new Error("Network response was not ok");

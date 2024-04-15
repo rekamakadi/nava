@@ -16,7 +16,7 @@ const ImageDataEditor = ({ image }) => {
   };
 
   const handleUpdate = () => {
-    fetch(`http://localhost:5000/${id}`, {
+    fetch(`http://localhost:3000/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
@@ -36,7 +36,7 @@ const ImageDataEditor = ({ image }) => {
   };
 
   const handleDelete = () => {
-    fetch(`http://localhost:5000/${id}`, {
+    fetch(`http://localhost:3000/${id}`, {
       method: 'DELETE',
     })
     .then(response => {

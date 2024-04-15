@@ -19,17 +19,17 @@ Ez a projekt egy képfeldolgozó rendszer listanézetének és kép adatlapjána
 1. Klónozd le a projekt repozitóriumát a saját gépedre:
 - git clone [https://github.com/rekamakadi/nava](Link)
 
-2. Server telepítése, futtatása:
+2. Szerver telepítése, futtatása:
 - cd server
 - npm install
 - npm run devStart
-- A server a http://localhost:5000 porton fut.
+- A szerver a http://localhost:3000 porton fut.
 
-3. Client telepítése, futtatása:
+3. Kliens telepítése, futtatása:
 - cd client
 - npm install
 - npm run dev
-- A client a http://localhost:5173 porton fut.
+- A kliens a http://localhost:5173 porton fut.
 
 ## Design
 

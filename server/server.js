@@ -30,4 +30,4 @@ app.delete('/:id', (req, res) => {
     res.send(`Image with id ${req.params.id} should be deleted`);
 });
 
-app.listen(5000, () => console.log('Server started'));
+app.listen(3000, () => console.log('Server started'));

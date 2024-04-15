@@ -11,7 +11,7 @@ const App = () => {
   const [images, setImages] = useState([]);
   
   function fetchImages() {
-    fetch("http://localhost:5000")
+    fetch("http://localhost:3000")
     .then((res) => !res.ok ? Error("Unexpected server response") : res.json())
     .then((data) => setImages(data))
     .catch((error) => console.log("Error: ", error));

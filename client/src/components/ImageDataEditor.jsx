@@ -1,11 +1,27 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { Button, Form } from "react-bootstrap";
 import { useParams, useNavigate } from "react-router-dom";
 
-const ImageDataEditor = ({ image }) => {
+const ImageDataEditor = () => {
   const { id } = useParams();
-  const [editedImage, setEditedImage] = useState(image || {});
   const navigate = useNavigate();
+  const [editedImage, setEditedImage] = useState(null);
+
+  function fetchImageById() {
+    fetch(`http://localhost:3000/${id}`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then(data => setEditedImage(data))
+        .catch(error => console.error("Error fetching image data:", error));
+  }
+
+  useEffect(() => {
+    fetchImageById();
+  }, [id]);
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -60,6 +76,10 @@ const ImageDataEditor = ({ image }) => {
     navigate(`/${id}`);
   };
 
+  if (!editedImage) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="container">
       <h3>Szerkesztés</h3>
@@ -69,7 +89,7 @@ const ImageDataEditor = ({ image }) => {
           <Form.Control
             type="text"
             name="slug"
-            value={editedImage.slug || ''}
+            value={editedImage.description_str || ''}
             onChange={handleChange}
           />
         </Form.Group>
@@ -78,7 +98,7 @@ const ImageDataEditor = ({ image }) => {
           <Form.Control
             type="date"
             name="creation_date"
-            value={editedImage.creation_date || ''}
+            value={editedImage.createDate_dt.split('T')[0] || ''}
             onChange={handleChange}
           />
         </Form.Group>
